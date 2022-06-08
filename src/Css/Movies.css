@@ -1,0 +1,45 @@
+.Results{ 
+    list-style: none;
+    display: inline-block;
+}
+
+.input-wrapper{
+    position: fixed; 
+    top: 1%;
+    left: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7vw;
+
+}
+
+.input-wrapper input{
+    height: 2vw;
+    width: 20vw;
+    text-align: center;
+}
+
+.ResultCard{
+    display: flex;
+}
+
+.ResultCard:nth-child(1){
+    padding-top: 8vw;
+}
+
+.InfoHeader{
+    padding-left: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.PosterWrapper{
+    box-shadow: 5px 5px 5px #ccc;
+}
+
+.InputWrapperContainer{
+    width: 100%;
+}

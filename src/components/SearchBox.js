@@ -1,16 +1,18 @@
 import React from "react";
-import "../Css/NavBar.css";
+import "../Css/SearchBox.css";
 
-const SearchBox = (props) => {
-  return (
-    <div className="search">
-      <input
-        value={props.value}
-        onChange={(event) => props.setSearchValue(event.target.value)}
-        placeholder="Type to Search..."
-      ></input>
-    </div>
-  );
-};
 
-export default SearchBox;
+// export default function SearchBox() {
+//   return (
+//     <div className="InputWrapperContainer">
+//       <div className="input-wrapper">
+//         <input
+//           type="text"
+//           placeholder="Search for a movie..."
+//           value={movies}
+//           onChange={onChange}
+//         />
+//       </div>{" "}
+//     </div>
+//   );
+// }

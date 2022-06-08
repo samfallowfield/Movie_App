@@ -1,11 +1,11 @@
 import React from 'react';
-// import "../App.css";
+import "../Css/Movies.css";
 
 const MovieList = (props) => {
     return (
         <>
             {props.movies.map((movie, index) =>  (
-            <div>
+            <div className="poster-position">
 
                 <img src={movie.Poster} alt='movie'></img>
                 <div/>

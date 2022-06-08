@@ -8,6 +8,7 @@ body {
   padding-left: 10px;
 }
 
-/* .Header{
-  display: flex;
-} */
+
+.App {
+  width: 100vw;
+}
