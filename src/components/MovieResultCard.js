@@ -16,8 +16,10 @@ function MovieResultCard({movie}) {
         <div className="Info">
             <div className="InfoHeader">
                 <h3 className="title">{movie.title}</h3>
-                <h4 className="release-date">{movie.release_date}</h4>
-                <h4 className="genre">{movie.genre}</h4>
+                <p className="release_date">
+                    {movie.release_date ? movie.release_date.substring(0, 4) : `-`}
+                </p>
+                <p className="overview">{movie.overview}</p>
             </div>
         </div>
     </div>

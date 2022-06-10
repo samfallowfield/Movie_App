@@ -1,27 +1,13 @@
+
 .Results{ 
     list-style: none;
     display: inline-block;
-}
-
-.input-wrapper{
-    position: fixed; 
-    top: 1%;
-    left: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 7vw;
-
-}
-
-.input-wrapper input{
-    height: 2vw;
-    width: 20vw;
-    text-align: center;
+    width: 90%;
 }
 
 .ResultCard{
     display: flex;
+
 }
 
 .ResultCard:nth-child(1){
@@ -33,13 +19,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
+    border: rgb(28, 28, 28) 1px solid;
+    width: 100%;
+    
+
 }
 
 .PosterWrapper{
     box-shadow: 5px 5px 5px #ccc;
 }
 
-.InputWrapperContainer{
+.Info{
     width: 100%;
+    padding-left: 1vw;
 }
