@@ -1,5 +1,6 @@
 import React from 'react';
 import '../Css/Movies.css';
+import axios from 'axios';
 
 
 function MovieResultCard({movie}) {
