@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Css/Movies.css';
-import axios from 'axios';
+import PostMovie from './PostMovie';
 
 
 function MovieResultCard({movie}) {
@@ -21,6 +21,7 @@ function MovieResultCard({movie}) {
                     {movie.release_date ? movie.release_date.substring(0, 4) : `-`}
                 </p>
                 <p className="overview">{movie.overview}</p>
+                <PostMovie  className="postButton" movie={movie} />
             </div>
         </div>
     </div>

@@ -16,6 +16,7 @@
 
 .InfoHeader{
     padding-left: 1vw;
+    padding-bottom: 1vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
