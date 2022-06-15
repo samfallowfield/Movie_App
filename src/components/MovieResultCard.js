@@ -1,9 +1,9 @@
 import React from 'react';
 import '../Css/Movies.css';
-import PostMovie from './PostMovie';
+import PostMovie from './MovieManagement';
 
 
-function MovieResultCard({movie}) {
+function MovieResultCard({movie, buttonState}) {
   return (
     <div className="ResultCard">
         <div className="PosterWrapper">
@@ -21,7 +21,7 @@ function MovieResultCard({movie}) {
                     {movie.release_date ? movie.release_date.substring(0, 4) : `-`}
                 </p>
                 <p className="overview">{movie.overview}</p>
-                <PostMovie  className="postButton" movie={movie} />
+                <PostMovie  className="postButton" movie={movie} buttonStateForChildren={buttonState}/>
             </div>
         </div>
     </div>

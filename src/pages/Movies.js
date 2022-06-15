@@ -18,19 +18,22 @@ function Movies() {
         })
     };
 
+    const buttonStateAdd = "Add";
+
 
 
   return (
     <div className="Movies">
       <div className="Container">
         <div className="SearchBoxContainer">
+            
           <SearchBox onSearchChange={handleSearchBoxChange} />
         </div>
         {results.length > 0 && (
           <ul className="Results">
             {results.map((movie) => (
               <li className="Poster" key={movie.id}>
-                <MovieResultCard movie={movie} />
+                <MovieResultCard movie={movie} buttonState={buttonStateAdd}/>
               </li>
             ))}
           </ul>
