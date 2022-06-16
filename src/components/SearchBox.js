@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "../Css/SearchBox.css";
+import { useLocation} from "react-router-dom";
 
-function SearchBox({ onSearchChange }) {
+function SearchBox({ onSearchChange}) {
+  const location = useLocation();
   const [searchText, setSearchText] = useState("");
 
   const onChange = (e) => {
     e.preventDefault();
-    onSearchChange(e.target.value);
+    onSearchChange(e.target.value, location.pathname);
     setSearchText(e.target.value)
   };
 
@@ -15,7 +17,7 @@ function SearchBox({ onSearchChange }) {
       <div className="input-wrapper">
         <input
           type="text"
-          placeholder="Search for a movie..."
+          placeholder="Search..."
           value={searchText}
           onChange={onChange}
         />

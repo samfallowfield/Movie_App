@@ -3,6 +3,7 @@ import "../Css/Movies.css";
 import axios from "axios";
 import MovieResultCard from "../components/MovieResultCard";
 import { useState } from "react";
+import markAsSeen from "../components/MovieManagement";
 
 function MovieCollection() {
 
@@ -16,7 +17,9 @@ function MovieCollection() {
     )
     .then(res => { 
         setResults((res.data));
-      })
+      },)
+
+   
 
   return (
 
@@ -25,6 +28,8 @@ function MovieCollection() {
           {results.map((movie) => (
             <li className="Poster" key={movie.id}>
               <MovieResultCard movie={movie} buttonState={buttonStateDelete} />
+              <button className="watchedButton" onClick={markAsSeen}>Mark as Watched</button>
+
             </li>
           ))}
         </ul>

@@ -1,7 +1,12 @@
 import base_axios from "axios";
 // import "../Css/PostMovie.css";
 
-function PostMovie(props) {
+function MovieManagement(props) {
+
+  
+
+
+
   const addTocollection = (movie) => {
     base_axios.post(`http://localhost:3000/movies`, {
       id: movie.id,
@@ -15,6 +20,7 @@ function PostMovie(props) {
   const deleteMovie = (movie) => {
     base_axios.delete(`http://localhost:3000/movies/${movie.id}`);
   };
+
 
   return (
     <div className="postButtonContainer">
@@ -33,7 +39,8 @@ function PostMovie(props) {
           Delete from collection
         </button>
       )}
+      
     </div>
   );
 }
-export default PostMovie;
+export default MovieManagement;

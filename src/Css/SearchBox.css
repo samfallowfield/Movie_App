@@ -1,20 +1,18 @@
 .input-wrapper{
-    position: fixed; 
-    top: -8%;
     left: 40%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 7vw;
-
 }
 
 .input-wrapper input{
     height: 2vw;
     width: 20vw;
     text-align: center;
+    font-size:125% ;
+    text-align: left;
+    padding-left: 3vw;
 }
 
 .InputWrapperContainer{
     width: 100%;
-}
+} 
