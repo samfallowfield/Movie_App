@@ -3,9 +3,16 @@ import base_axios from "axios";
 
 function MovieManagement(props) {
 
-  
-
-
+  const markAsSeen = (movie) => {
+    base_axios.patch(`http://localhost:3000/movies/${movie.id}`,{
+      id: movie.id,
+      title: movie.title,
+      overview: movie.overview,
+      poster_path: movie.poster_path,
+      release_date: movie.release_date,
+      seen: true
+    })
+  }
 
   const addTocollection = (movie) => {
     base_axios.post(`http://localhost:3000/movies`, {
@@ -39,8 +46,9 @@ function MovieManagement(props) {
           Delete from collection
         </button>
       )}
-      
+       {/* <button onClick={() => markAsSeen(markAsSeen(props.movie.id))}>hello world</button> */}
     </div>
+   
   );
 }
 export default MovieManagement;
