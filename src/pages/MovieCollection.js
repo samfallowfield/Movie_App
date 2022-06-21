@@ -3,20 +3,19 @@ import "../Css/Movies.css";
 import axios from "axios";
 import MovieResultCard from "../components/MovieResultCard";
 import { useState, useEffect } from "react";
-import markAsSeen from "../components/MovieManagement";
 
 function MovieCollection() {
   const [results, setResults] = useState([]);
 
   const buttonStateDelete = "Delete";
+  const buttonStateWatched = "Watched";
 
   useEffect(() => {
-    async function fetchMovies() {
+      function fetchMovies() {
       axios.get(`http://localhost:3000/movies`).then((res) => {
         setResults(res.data);
       });
     }
-
     fetchMovies();
   }, []);
 
@@ -24,13 +23,7 @@ function MovieCollection() {
     <ul className="Results">
       {results.map((movie) => (
         <li className="Poster" key={movie.id}>
-          <MovieResultCard movie={movie} buttonState={buttonStateDelete} />
-          <button
-            className="watchedButton"
-            onClick={() => markAsSeen(markAsSeen)}
-          >
-            Mark as Watched
-          </button>
+          <MovieResultCard movie={movie} buttonState={buttonStateDelete} buttonState2={buttonStateWatched}/>
         </li>
       ))}
     </ul>

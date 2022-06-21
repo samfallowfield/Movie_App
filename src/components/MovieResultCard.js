@@ -3,7 +3,8 @@ import '../Css/Movies.css';
 import MovieManagement from './MovieManagement';
 
 
-function MovieResultCard({movie, buttonState}) {
+
+function MovieResultCard({movie, buttonState, buttonState2}) {
   return (
     <div className="ResultCard">
         <div className="PosterWrapper">
@@ -21,7 +22,7 @@ function MovieResultCard({movie, buttonState}) {
                     {movie.release_date ? movie.release_date.substring(0, 4) : `-`}
                 </p>
                 <p className="overview">{movie.overview}</p>
-                <MovieManagement className="postButton" movie={movie} buttonStateForChildren={buttonState} />
+                <MovieManagement className="postButton" movie={movie} buttonStateForChildren={buttonState} buttonStateWatched={buttonState2}/>
             </div>
         </div>
     </div>

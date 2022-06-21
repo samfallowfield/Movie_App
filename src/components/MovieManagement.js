@@ -1,18 +1,19 @@
 import base_axios from "axios";
-// import "../Css/PostMovie.css";
+import "../Css/MovieManagement.css";
 
 function MovieManagement(props) {
 
-  const markAsSeen = (movie) => {
-    base_axios.patch(`http://localhost:3000/movies/${movie.id}`,{
+  const setSeen = (movie) => {
+    base_axios.patch(`http://localhost:3000/movies/${movie.id}`, {
       id: movie.id,
       title: movie.title,
       overview: movie.overview,
       poster_path: movie.poster_path,
       release_date: movie.release_date,
-      seen: true
-    })
-  }
+      seen: true,
+    });
+  };
+
 
   const addTocollection = (movie) => {
     base_axios.post(`http://localhost:3000/movies`, {
@@ -29,26 +30,44 @@ function MovieManagement(props) {
   };
 
 
+  const handleDeleteMovie = (deleteMovie) => {
+    if (deleteMovie) {
+    }
+    }
+
   return (
-    <div className="postButtonContainer">
-      {props.buttonStateForChildren === "Add" ? (
-        <button
-          className="postButton"
-          onClick={() => addTocollection(props.movie)}
-        >
-          Add to collection
-        </button>
-      ) : (
-        <button
-          className="deleteButton"
-          onClick={() => deleteMovie(props.movie)}
-        >
-          Delete from collection
-        </button>
-      )}
-       {/* <button onClick={() => markAsSeen(markAsSeen(props.movie.id))}>hello world</button> */}
+    <div className="movieManagement">
+      <div className="postButtonContainer">
+        {props.buttonStateForChildren === "Add" ? (
+          <button
+            className="postButton"
+            onClick={() => addTocollection(props.movie)}
+          >
+            Add to collection
+          </button>
+        ) : (
+          <button
+            className="deleteButton"
+            onClick={() => deleteMovie(props.movie)}
+          >
+            Delete from collection
+          </button>
+        )}
+      </div>
+      <div className="MarkAsSeenButtonContainer">
+        {props.buttonStateWatched === "Watched" ? (
+          <button
+            className="updateButton"
+            onClick={() => setSeen(props.movie)}
+          >
+            Mark as seen
+          </button>
+        ) : ( 
+          "")}
+                
+        
+         </div>
     </div>
-   
   );
 }
 export default MovieManagement;

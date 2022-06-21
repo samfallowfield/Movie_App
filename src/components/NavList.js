@@ -10,6 +10,9 @@ export default function NavList() {
           <Link to="/movies">Movies</Link>
         </li>
         <li className="NavBar__navItem navItem">
+          <Link to="/moviecollection">Watchlist</Link>
+          </li>
+        <li className="NavBar__navItem navItem">
           <Link to="/books">Books</Link>
         </li>
         <li className="NavBar__navItem navItem">
