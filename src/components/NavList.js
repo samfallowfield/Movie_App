@@ -4,21 +4,30 @@ import "../Css/NavList.css";
 
 export default function NavList() {
   return (
-    <div className="NavBar__navlistContainer">
-      <ul className="NavBar__navList">
-        <li className="NavBar__navItem navItem">
-          <Link to="/movies">Movies</Link>
-        </li>
-        <li className="NavBar__navItem navItem">
-          <Link to="/moviecollection">Watchlist</Link>
-          </li>
-        <li className="NavBar__navItem navItem">
-          <Link to="/books">Books</Link>
-        </li>
-        <li className="NavBar__navItem navItem">
-          <Link to="/music">Music</Link>
-        </li>
-      </ul>
+    <div className="NavList">
+        <div class="dropdown">
+            <button class="dropbtn" >Movies</button>
+            <div class="dropdown_content">
+            <Link to="/movies">Search for movies</Link>
+            <Link to="/moviecollection">Watchlist</Link>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn" >Music</button>
+            <div class="dropdown_content">
+            <Link to="*">Search for music</Link>
+            <Link to="*">Music list </Link>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Books</button>
+            <div class="dropdown_content">
+            <Link to="*">Search for books</Link>
+            <Link to="*">Books list </Link>
+            </div>
+            </div>
+
     </div>
   );
 }
+

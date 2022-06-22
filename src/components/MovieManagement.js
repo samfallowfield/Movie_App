@@ -22,6 +22,7 @@ function MovieManagement(props) {
       overview: movie.overview,
       poster_path: movie.poster_path,
       release_date: movie.release_date.toString(),
+      seen: false,
     });
   };
 
