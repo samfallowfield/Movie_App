@@ -10,6 +10,7 @@ export default function NavList() {
             <div class="dropdown_content">
             <Link to="/movies">Search for movies</Link>
             <Link to="/moviecollection">Watchlist</Link>
+  
             </div>
         </div>
         <div class="dropdown">
