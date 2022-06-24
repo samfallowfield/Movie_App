@@ -28,9 +28,11 @@ export default function App() {
   return (
     <div className="App">
         <div className="ButtonContainer">
+            <div className= "Button">
       <button className="toggleButton" onClick={() => handleChange()}>
         {toggleWatchlist ? "Show unseen movies" : "Show all movies"}
       </button>
+      </div>
       </div>
       <div>{toggleWatchlist ? <MovieCollection /> : <UnwatchedMovies />}</div>
     </div>
