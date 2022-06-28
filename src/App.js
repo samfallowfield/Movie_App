@@ -16,13 +16,13 @@ function App() {
   const location = useLocation();
 
   const [results, setResults] = useState([]);
-  const [searchInput, setSearchInput] = useState("");
+  const [searchText, setSearchText] = useState("");
 
 
 
 
     const getMovieList = () => {
-      axios.get(searchInput).then((res) => {
+      axios.get(searchText).then((res) => {
         setResults(res.data.results)
       });
     }
@@ -32,7 +32,7 @@ function App() {
         case "/movies":
           getMovieList();
       }
-    }, [searchInput, location]);
+    }, [searchText, location]);
     
   //   switch(location){
   //     case "/movies":
@@ -47,7 +47,7 @@ function App() {
 
   return (
       <div className="App">
-          <NavBar getMovieList = {setSearchInput} />
+          <NavBar getMovieList = {setSearchText} />
           <Routes>
             <Route exact path="/" element={<Home/>}/>
             <Route exact path="/movies" element={<Movies results ={results}/>}/>
