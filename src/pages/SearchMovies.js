@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../Css/Movies.css";
 import MovieResultCard from "../components/MovieResultCard";
 
+
 function SearchMovies({results}) {
 
 

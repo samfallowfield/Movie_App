@@ -7,11 +7,11 @@ import NavList from "./NavList";
 import SearchBox from "./SearchBox";
 import "../Css/Movies.css";
 
-const NavBar = ({ handleSearchBoxChange }) => {
+const NavBar = ({ getMovieList }) => {
   return (
     <div className="NavBar__container">
       <SiteTitle />
-      <SearchBox onSearchChange={handleSearchBoxChange} />
+      <SearchBox onSearchChange={getMovieList} />
       <NavList />
     </div>
   );

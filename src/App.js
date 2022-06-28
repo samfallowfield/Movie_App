@@ -1,36 +1,53 @@
 import React, {useState, useEffect} from 'react';
 import "./Css/App.css";
 import NavBar from "./components/Navbar";
-import {Route, BrowserRouter, Routes} from 'react-router-dom';
+import {Route, Routes} from 'react-router-dom';
 import Home from './pages/Home';
 import Movies from './pages/SearchMovies';
 import Books from './pages/Books';
 import Music from './pages/Music';
 import axios from "./data/axios.config.js";
 import MyMovies from './pages/MyMovies';
+import { useLocation } from 'react-router-dom';
 
 
 function App() {
 
-  const [results, setResults] = useState([]);
+  const location = useLocation();
 
-  const handleSearchBoxChange = (currentInput, location) => {
-    
-    switch(location){
-      case "/movies":
-        axios.get(`${currentInput}`).then((res) => {
-          setResults(res.data.results);
-        });
-    
+  const [results, setResults] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
+
+
+
+
+    const getMovieList = () => {
+      axios.get(searchInput).then((res) => {
+        setResults(res.data.results)
+      });
     }
-  };
+
+    useEffect(() => {
+      switch(location) {
+        case "/movies":
+          getMovieList();
+      }
+    }, [searchInput, location]);
+    
+  //   switch(location){
+  //     case "/movies":
+  //       axios.get(`${currentInput}`).then((res) => {
+  //         setResults(res.data.results);
+  //       });
+    
+    
+
 
 
 
   return (
-    <BrowserRouter>
       <div className="App">
-          <NavBar handleSearchBoxChange = {handleSearchBoxChange} />
+          <NavBar getMovieList = {setSearchInput} />
           <Routes>
             <Route exact path="/" element={<Home/>}/>
             <Route exact path="/movies" element={<Movies results ={results}/>}/>
@@ -39,7 +56,6 @@ function App() {
             <Route exact path="/mymovies" element ={<MyMovies/>}/>
         </Routes>
       </div>
-    </BrowserRouter>
   );
   }
 
