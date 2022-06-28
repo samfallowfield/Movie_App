@@ -3,13 +3,11 @@ import "./Css/App.css";
 import NavBar from "./components/Navbar";
 import {Route, BrowserRouter, Routes} from 'react-router-dom';
 import Home from './pages/Home';
-import Movies from './pages/Movies';
+import Movies from './pages/SearchMovies';
 import Books from './pages/Books';
 import Music from './pages/Music';
-import MovieCollection from './pages/MovieCollection';
-import ToggleTest from './pages/ToggleTest';
-import UnwatchedMovies from './components/UnwatchedMovies';
 import axios from "./data/axios.config.js";
+import MyMovies from './pages/MyMovies';
 
 
 function App() {
@@ -38,9 +36,7 @@ function App() {
             <Route exact path="/movies" element={<Movies results ={results}/>}/>
             <Route exact path="/books" element={<Books/>}/>
             <Route exact path="/music" element={<Music/>}/>
-            <Route exact path="/moviecollection" element={<MovieCollection/>}/>
-            <Route exact path="/toggletest" element ={<ToggleTest/>}/>
-            <Route exact path="/unwatchedmovies" element ={<UnwatchedMovies/>}/>
+            <Route exact path="/mymovies" element ={<MyMovies/>}/>
         </Routes>
       </div>
     </BrowserRouter>

@@ -3,7 +3,7 @@ import "../Css/ToggleTest.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import UnwatchedMovies from "../components/UnwatchedMovies";
-import MovieCollection from "./MovieCollection";
+import MovieCollection from "../components/MovieCollection";
 
 export default function App() {
   const [results, setResults] = useState([]);
@@ -15,15 +15,6 @@ export default function App() {
   const handleChange = () => {
     return setToggleWatchlist(!toggleWatchlist);
   };
-
-  useEffect(() => {
-    function fetchMovies() {
-      axios.get(`http://localhost:3000/movies`).then((res) => {
-        setResults(res.data);
-      });
-    }
-    fetchMovies();
-  }, []);
 
   return (
     <div className="App">

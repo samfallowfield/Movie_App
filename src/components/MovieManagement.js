@@ -1,7 +1,12 @@
 import base_axios from "axios";
+import axios from "axios";
+import { React, useEffect, useState} from "react";
 import "../Css/MovieManagement.css";
+import "./MovieCollection";
 
 function MovieManagement(props) {
+
+
 
   const setSeen = (movie) => {
     base_axios.patch(`http://localhost:3000/movies/${movie.id}`, {
@@ -13,7 +18,6 @@ function MovieManagement(props) {
       seen: true,
     });
   };
-
 
   const addTocollection = (movie) => {
     base_axios.post(`http://localhost:3000/movies`, {
@@ -27,14 +31,17 @@ function MovieManagement(props) {
   };
 
   const deleteMovie = (movie) => {
-    base_axios.delete(`http://localhost:3000/movies/${movie.id}`);
+    base_axios.delete(`http://localhost:3000/movies/${movie.id}`
+
+      // const newMovies = props.results.filter(m => m.id !== movie.id);
+    )};
+
+
+  const handleDeleteMovie = (movie) => {
+    deleteMovie(movie);
+
+
   };
-
-
-  const handleDeleteMovie = (deleteMovie) => {
-    if (deleteMovie) {
-    }
-    }
 
   return (
     <div className="movieManagement">
@@ -49,7 +56,7 @@ function MovieManagement(props) {
         ) : (
           <button
             className="deleteButton"
-            onClick={() => deleteMovie(props.movie)}
+            onClick={() => handleDeleteMovie(props.movie)}
           >
             Delete from collection
           </button>
@@ -57,17 +64,13 @@ function MovieManagement(props) {
       </div>
       <div className="MarkAsSeenButtonContainer">
         {props.buttonStateWatched === "Watched" ? (
-          <button
-            className="updateButton"
-            onClick={() => setSeen(props.movie)}
-          >
+          <button className="updateButton" onClick={() => setSeen(props.movie)}>
             Mark as seen
           </button>
-        ) : ( 
-          "")}
-                
-        
-         </div>
+        ) : (
+          ""
+        )}
+      </div>
     </div>
   );
 }

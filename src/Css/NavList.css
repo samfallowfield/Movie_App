@@ -1,3 +1,5 @@
+
+
 .NavList {
   display: flex;
   align-items: flex-end;
@@ -40,7 +42,7 @@
 .dropdown_content {
   display: none;
   position: absolute;
-  top: 36px;
+  /* top: 36px; */
   /* margin: -3px; */
   background-color: var(--clr-gray100);
   min-width: 150px;

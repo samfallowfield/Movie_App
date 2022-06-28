@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../Css/Movies.css";
 import MovieResultCard from "../components/MovieResultCard";
 
-function Movies({results}) {
+function SearchMovies({results}) {
 
 
   const buttonStateAdd = "Add";
@@ -24,4 +24,4 @@ function Movies({results}) {
   );
 }
 
-export default Movies;
+export default SearchMovies;

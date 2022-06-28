@@ -1,8 +1,9 @@
 import React from "react";
 import "../Css/Movies.css";
 import axios from "axios";
-import MovieResultCard from "../components/MovieResultCard";
+import MovieResultCard from "./MovieResultCard";
 import { useState, useEffect } from "react";
+import MovieManagement from "./MovieManagement";
 
 function MovieCollection() {
   const [results, setResults] = useState([]);

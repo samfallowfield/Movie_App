@@ -1,5 +1,6 @@
 body {
-  background: var(--clr-gray100);
+  background-color: aliceblue;
+  /* background-color: rgb(53, 52, 52); */
   color: rgb(21, 18, 18);
 } 
 
